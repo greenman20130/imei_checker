@@ -20,6 +20,5 @@ class ImeiService:
             }    
         
         # Execute request
-        response = requests.request("POST", "https://api.imeicheck.net/v1/checks", headers=headers, data=payload) #f'{ImeiService.BASE_URL}v1/checks'
-        print(response.text)
+        response = requests.request("POST", "https://api.imeicheck.net/v1/checks", headers=headers, data=payload)
         return response.json()
