@@ -1,10 +1,8 @@
 from fastapi import FastAPI, HTTPException, Depends, Query
-from fastapi.security import OAuth2PasswordBearer
 from imei_service import ImeiService
 from config import AUTHENTICATION_TOKEN
 
 app = FastAPI()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 @app.post("/api/check-imei")
 async def check_imei(imei: str, token: str):
